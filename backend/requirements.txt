@@ -1,0 +1,32 @@
+# ════════════════════════════════════════════════════════════════
+# Failure-Aware RAG System — Backend Dependencies
+# Install with:  pip install -r requirements.txt
+# ════════════════════════════════════════════════════════════════
+
+# ── Web framework ─────────────────────────────────────────────
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+pydantic==2.7.1
+
+# ── Embeddings ────────────────────────────────────────────────
+sentence-transformers==2.7.0
+torch>=2.0.0                # CPU-only is fine; add +cu118 suffix for GPU
+transformers>=4.38.0
+
+# ── Vector stores ────────────────────────────────────────────
+faiss-cpu==1.8.0            # use faiss-gpu on a CUDA machine
+chromadb==0.5.0
+
+# ── Dataset loading ──────────────────────────────────────────
+datasets==2.19.1            # Hugging Face datasets (SQuAD)
+
+# ── HTTP (for Ollama calls) ──────────────────────────────────
+requests==2.31.0
+
+# ── Optional: OpenAI backend ─────────────────────────────────
+openai>=1.20.0              # only needed if DEFAULT_LLM = "openai"
+
+# ── Utilities ────────────────────────────────────────────────
+numpy>=1.24.0
+tqdm>=4.66.0
+python-dotenv>=1.0.0        # load .env files (optional)
